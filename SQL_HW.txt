@@ -1,0 +1,35 @@
+create table student(
+id varchar(100) primary key,
+name text,
+score text,
+grade text)
+
+select*from student
+
+insert into student(id,name,score,grade)values('2','ชนิดา','5','F')
+
+update student set name='มนัสวี' where id = '2'
+
+delete from student where id='2'
+
+create table A(
+surname varchar(100) ,
+lastname varchar(100),
+score text,
+subject text,
+primary key(surname,lastname));
+
+insert into A values
+('กนกพร','เช่งขุนทด','10','ไทย'),
+('ชนิดา','รัตนวิไลสกุล','60','คณิตศาสตร์'),
+('ภารดี','วีระอาชา','66','ไทย'),
+('มนัสวี','รอดอิ้ว','15','อังกฤษ'),
+('รติ','มณีงาม','88','อังกฤษ'),
+('สโรชา','รัตนวิไลสกุล','41','คณิตศาสตร์'),
+('อภิชิต','มณีงาม','75','อังกฤษ')
+
+update A set score='77',subject='อังกฤษ' where surname='กนกพร' and lastname='เช่งขุนทด';
+
+delete from A where surname='รติ' and last='มณีงาม'
+delete from A where surname='อภิชิต' and last='มณีงาม'
+delete from A where surname='สโรชา' and last='รัตนวิไลสกุล';
