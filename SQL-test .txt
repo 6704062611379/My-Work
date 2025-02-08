@@ -1,0 +1,103 @@
+create table test(
+c_i int(10) AUTO_INCREMENT,
+c_v varchar(45),
+c_f float(10),
+c_d DATETIME,
+c_b BLOB,
+c_e ENUM('M','F'),
+c_t text,
+primary key(c_i)
+);
+
+
+select*from test
+
+insert into test values
+(1,'ข้อความ',5.5,'2021-02-01 12:09:05',0000,'F','ข้อความยาว')
+
+insert into test (c_v,c_f,c_d,c_b,c_e,c_t) values 
+('ข้อความ',5.5,'2022-02-01 12:09:05',0000,'F','ข้อความยาว')
+
+insert into test (c_v,c_f,c_d,c_b,c_e,c_t) values 
+('ข้อความ',5.5,'2020-02-01 12:09:05',0000,'X','ข้อความยาว')
+
+
+
+########### test 2
+
+create table test2(
+c_i int(10) auto_increment,
+c_v varchar(45) default 'No Char',
+c_f float(10) default 2.0,
+c_d DATETIME default '2020-01-01 12:00:00',
+c_b BLOB,
+c_e ENUM('M','F') default 'M',
+c_t text,
+primary key(c_i)
+)
+
+
+insert into test2 (c_b,c_t) values (0000,'ข้อความยาว')
+
+
+########### test 3
+
+create table test3(
+c_i int(10) auto_increment,
+c_v varchar(45) DEFAULT NULL,
+c_f float(10) DEFAULT NULL,
+c_d DATETIME DEFAULT NULL,
+c_b BLOB DEFAULT NULL,
+c_e ENUM('M','F') DEFAULT NULL,
+c_t text DEFAULT NULL,
+primary key(c_i)
+)
+
+insert into test3 (c_i) values (1)
+
+select*from test3
+
+
+############ test 4
+
+create table test4(
+c_i int(10) auto_increment,
+c_v varchar(45) NOT NULL,
+c_f float(10) NOT NULL,
+c_d DATETIME NOT NULL,
+c_b BLOB NOT NULL,
+c_e ENUM('M','F') NOT NULL,
+c_t text NOT NULL,
+primary key(c_i)
+)
+
+insert into test4 (c_i) values (1)
+
+select*from test4
+
+
+############# test 5
+
+create table test5(
+id int,
+name char(10)
+)
+
+alter table test5 add address char(1)
+
+alter table test5 modify address char(30)
+
+alter table test5 change column address province varchar(100) default null
+
+select*from test5
+
+############# car
+
+create table car(
+id varchar(50),
+money float,
+band text,
+primary key(id)
+)
+
+select*from car
