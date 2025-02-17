@@ -1,0 +1,45 @@
+####### 38
+
+select * from store where price_unit is null
+
+####### 39
+
+select * from store where price_unit is not null
+
+####### 40
+
+select * list, send_date from store where send_date between '2561-02-01 00:00:00' and '2561-02-05 00:00:00'
+
+####### 41
+
+select * list, price_unit from store where price_unit between 20 and 150
+
+####### 43
+
+select day(send_date), month(send_date), year(send_date) from store
+
+####### 44
+
+select list from store where month(send_date) = 4
+
+####### 45
+
+select hour(send_date), minute(send_date), second(send_date) from store
+
+####### 46
+
+select list, type from store where != 'อาหาร'
+
+####### 47
+
+select item_id, list from store order by cast(item_id as decimal)limit 5
+
+######## 48
+
+select item_id, list from store order by cast(item_id as decimal)limit 2
+
+######## 49
+
+select item_id, list from store order by cast(item_id as decimal)limit 2,2
+
+
