@@ -1,0 +1,29 @@
+Create table store_backup(
+item_id int(10),
+list varchar(45),
+price_unit varchar(45),
+type varchar(45),
+send_date varchar(45),
+item_number varchar(45),
+company_id varchar(45),
+company varchar(45),
+En_company varchar(45),
+primary key(item_id)
+);
+
+
+insert into store_backup (item_id, list, price_unit, type, send_date, item_number, company_id, company, En_company) Values
+(1,'ม้า','20','อาหาร','2561-04-01 23:29:50','10','3','พารากอ','parago'),
+(2,'ยำ','5','อาหาร','2561-04-01 15:33:08','20','4','เทสโกง','test'),
+(15,'กาว','65','ของใช้','2561-04-02 11:08:11','558','1','เดอะมัน','THEMON'),
+(16,'ชุดกระท่อม','55','ของใช้','2561-04-05 01:05:55','17.5','3','พารากอ','parago'),
+(17,'ม้าไม้','120','ของใช้','2561-02-03 00:00:00','-63','1','เดอะมัน','THEMON')
+
+select * from store Union select * from store_backup
+
+
+select s.item_id, s.list, c.company, c.owner From company c, store s Where c.company_id = s.company_id
+
+
+
+
