@@ -1,0 +1,48 @@
+Select y.item_id, y.list, x.company, x.owner From company x, store y Where x.company = y.company and x.owner = 'มนัสวี'
+
+Create table owner(
+id_owner int(10) auto_increment,
+owner varchar(100),
+Primary key (id_owner)
+);
+
+insert into owner (id_owner, owner) values 
+(1,'benten'),(2,'Payu'),(3,'bom'),(4,'pareena'),(5,'pang')
+
+Create view v_store as select s.item_id, s.list, s.company, m.owner from store s, owner m Where s.company_id = m.id_owner
+
+update v_store set owner = 'ข้อความใหม่' Where item_id = 3
+
+insert into v_store (list, company, owner) values ('น้ำท่อม','หมูหมด','ตำรวจ')
+
+Create view v_store as select item_id, list, company from store
+
+insert into v_store (list, company) values('น้ำท่อม','หมูเด้ง')
+
+delete from v_store where item_id = 15
+
+create table t1(
+id int(10) auto_increment,
+name varchar(50),
+lnk int(10),
+primary key(id),
+foreign key (lnk) references t2(id)
+);
+
+create table t2(
+id int(10) auto_increment,
+name varchar(50),
+primary key(id)
+);
+
+insert into t1 (id, name, lnk) values (1,'a',1), (2,'b',1), (3,'c', 2), (4,'d',2)
+
+insert into t2 (id, name) values (1,'x'),(2,'y'),(3,'z')
+
+update t1 set lnk = 4 where id = 2
+
+update t1 set lnk = 4 where id = 4
+
+delete from t2 where id = 4
+
+
