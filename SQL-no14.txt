@@ -1,0 +1,43 @@
+CREATE TABLE car(
+    id VARCHAR(50),
+    money Float,
+    band TEXT,
+    PRIMARY KEY(id) 
+);
+
+CREATE TABLE truck(
+id VARCHAR(50),
+money Float,
+band TEXT,
+PRIMARY KEY(id)
+);
+
+INSERT INTO car VALUES('1', 10, 'car')
+INSERT INTO truck VALUES('1', 10, 'truck')
+
+CREATE TABLE book(
+    id VARCHAR(50),
+    money Float,
+    band TEXT,
+    PRIMARY KEY(id) 
+);
+
+CREATE TABLE notebook(
+id VARCHAR(50),
+money Float,
+band TEXT,
+PRIMARY KEY(id)
+);
+
+INSERT INTO book VALUES('1', 10, 'book')
+INSERT INTO notebook VALUES('1', 10, 'notebook')
+
+CREATE USER 'new_b'@'localhost' IDENTIFIED BY 'b'
+
+GRANT all ON G_test1.car TO 'new_b'@'localhost'
+GRANT select, insert ON G_test1.truck TO 'new_b' @'localhost'
+GRANT select ON g_test2.*TO 'new_b' @'localhost'
+
+INSERT INTO car VALUES('2', 250, 'benz')
+INSERT INTO truck VALUES('2', 2000, 'JUMBO')
+
